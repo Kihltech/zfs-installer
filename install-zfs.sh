@@ -115,7 +115,7 @@ USERDATA/%P                    mountpoint=/home/%P canmount=on com.ubuntu.zsys:b
 '
 c_zfs_mount_dir=/mnt
 c_installed_os_mount_dir=/target
-declare -A c_supported_linux_distributions=([Debian]="10 11" [Ubuntu]="18.04 20.04" [UbuntuServer]="18.04 20.04" [LinuxMint]="19.1 19.2 19.3" [Linuxmint]="20 20.1" [elementary]=5.1)
+declare -A c_supported_linux_distributions=([Debian]="10 11" [Ubuntu]="18.04 20.04 22.04" [UbuntuServer]="18.04 20.04 22.04" [LinuxMint]="19.1 19.2 19.3" [Linuxmint]="20 20.1" [elementary]=5.1)
 c_temporary_volume_size=12  # gigabytes; large enough - Debian, for example, takes ~8 GiB.
 c_passphrase_named_pipe=$(dirname "$(mktemp)")/zfs-installer.pp.fifo
 c_dns=8.8.8.8
@@ -1170,8 +1170,10 @@ When the update option is presented, choose to update Subiquity to the latest ve
 At the partitioning stage:
 
 - select `Custom storage layout` -> `Done`
+
+For mirror/raidz1/raidz2/raidz3 only one disk needs to be prepared:
 - select `'"$selected_disk_subiquity_name"'`/`partition 4` -> `Edit`
-  - set `Format:` to `ext4` (mountpoint will be automatically selected)
+  - set `Format:` to `ext4` (mountpoint will be automatically selected as `/`)
   - click `Save`
 - click `Done` -> `Continue` (ignore warning)
 - follow through the installation, until the end (after the updates are applied)
@@ -1179,7 +1181,7 @@ At the partitioning stage:
 
 Do not continue in this terminal (tap Enter) now!
 
-You can switch anytime to this terminal, and back, in order to read the instructions.
+You can switch anytime to this terminal (Ctrl+Alt+F2), and back, in order to read the instructions.
 '
 
   whiptail --msgbox "$dialog_message" 30 100
