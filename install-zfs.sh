@@ -91,19 +91,19 @@ c_default_dataset_create_options='
 ROOT                           mountpoint=/ com.ubuntu.zsys:bootfs=yes com.ubuntu.zsys:last-used=$(date +%s)
 ROOT/srv                       com.ubuntu.zsys:bootfs=no
 ROOT/usr                       canmount=off com.ubuntu.zsys:bootfs=no
-ROOT/usr/local
+#ROOT/usr/local
 ROOT/var                       canmount=off com.ubuntu.zsys:bootfs=no
-ROOT/var/games
+#ROOT/var/games
 ROOT/var/lib
-ROOT/var/lib/AccountsService
-ROOT/var/lib/apt
-ROOT/var/lib/dpkg
-ROOT/var/lib/NetworkManager
+#ROOT/var/lib/AccountsService
+#ROOT/var/lib/apt
+#ROOT/var/lib/dpkg
+#ROOT/var/lib/NetworkManager
 ROOT/var/log
-ROOT/var/mail
-ROOT/var/snap
-ROOT/var/spool
-ROOT/var/www
+#ROOT/var/mail
+#ROOT/var/snap
+#ROOT/var/spool
+#ROOT/var/www
 ROOT/tmp                       com.ubuntu.zsys:bootfs=no
 
 USERDATA                       mountpoint=/ canmount=off
